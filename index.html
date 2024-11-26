@@ -4,27 +4,100 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nerdy</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Tailwind CSS for responsive menu -->
+    <style>
+      /* When the menu toggle is checked, show the mobile menu */
+      #menu-toggle:checked + #mobile-menu {
+        transform: translateY(70px);
+      }
+    </style>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
     <!-- header -->
-    <header class="w-11/12 mx-auto">
+    <header>
       <!-- navbar design -->
-      <nav class="flex items-center  mt-5 justify-between">
-        <h1 class="text-[#0F0F0F] text-3xl font-bold">Nerdy</h1>
-        <ul class="flex gap-4">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-        <button class="bg-[#D8FB78] px-6 rounded-full font-bold py-2">
-          Buy Now
-        </button>
+      <nav
+        class="bg-white fixed z-50 w-full top-0 p-5"
+      >
+        <div class="container mx-auto flex items-center justify-between">
+          <!-- Logo with Font Awesome Icon -->
+          <div class="flex items-center gap-2">
+            <i class="fas fa-book text-3xl text-[#0F0F0F]"></i>
+            <h1 class="text-[#0F0F0F] text-2xl font-bold">Nerdy</h1>
+          </div>
+
+          <!-- Desktop Menu -->
+          <ul class="hidden md:flex gap-6 text-[#0F0F0F]">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+
+          <!-- Buy Now Button -->
+          <button
+            class="hidden md:block bg-[#D8FB78] px-6 py-2 rounded-full font-bold hover:bg-[#c7ea6e]"
+          >
+            Buy Now
+          </button>
+
+          <!-- Mobile Menu Button (Hamburger) -->
+          <label
+            for="menu-toggle"
+            class="md:hidden text-2xl text-[#0F0F0F] cursor-pointer"
+          >
+            <i class="fas fa-bars"></i>
+          </label>
+
+          <!-- Hidden Checkbox for Mobile Menu Toggle -->
+          <input type="checkbox" id="menu-toggle" class="hidden" />
+
+          <!-- Mobile Menu -->
+          <ul
+            class="absolute shadow-2xl border left-0 right-0 top-0 p-5 bg-white md:hidden transition-transform transform -translate-y-full"
+            id="mobile-menu"
+          >
+            <li>
+              <a href="#" class="block text-[#0F0F0F] hover:text-[#D8FB78] py-2"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a href="#" class="block text-[#0F0F0F] hover:text-[#D8FB78] py-2"
+                >Projects</a
+              >
+            </li>
+            <li>
+              <a href="#" class="block text-[#0F0F0F] hover:text-[#D8FB78] py-2"
+                >About</a
+              >
+            </li>
+            <li>
+              <a href="#" class="block text-[#0F0F0F] hover:text-[#D8FB78] py-2"
+                >Contact</a
+              >
+            </li>
+            <button
+              class="w-full bg-[#D8FB78] px-6 py-2 rounded-full font-bold hover:bg-[#c7ea6e]"
+            >
+              Buy Now
+            </button>
+          </ul>
+        </div>
       </nav>
+
       <!-- hero section -->
-      <div class="grid mt-10 grid-cols-1 items-center lg:grid-cols-2 gap-10">
+      <div
+        class="container grid w-11/12 mx-auto mt-32 grid-cols-1 items-center lg:grid-cols-2 gap-10"
+      >
         <div class="space-y-5">
           <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold">
             Designed to combine style and functionality.
@@ -48,7 +121,7 @@
       </div>
     </header>
     <!-- main  -->
-    <main class="w-11/12 mx-auto">
+    <main class="container w-11/12 mx-auto">
       <!-- projects section -->
       <section class="py-10">
         <div class="max-w-3xl mx-auto space-y-5 text-center">
@@ -85,13 +158,15 @@
               <button class="border px-6 rounded-full w-full font-bold py-2">
                 Add to cart
               </button>
-              <button class="border px-3 border-[#FF582F] text-[#FF582F] rounded-full font-bold py-2">
+              <button
+                class="border px-3 border-[#FF582F] text-[#FF582F] rounded-full font-bold py-2"
+              >
                 <i class="fa-solid fa-heart"></i>
               </button>
             </div>
           </div>
           <!-- project card-2  -->
-          <div class="p-5 space-y-3 bg-[#ffffff] rounded-3xl  shadow-md">
+          <div class="p-5 space-y-3 bg-[#ffffff] rounded-3xl shadow-md">
             <img
               src="img/woman-model-demonstrating-winter-cloths 1.png"
               alt="project-1"
@@ -116,7 +191,7 @@
             </div>
           </div>
           <!-- project card-3 -->
-          <div class="p-5 space-y-3 bg-[#ffffff] rounded-3xl  shadow-md">
+          <div class="p-5 space-y-3 bg-[#ffffff] rounded-3xl shadow-md">
             <img
               src="img/woman-model-demonstrating-winter-cloths 1.png"
               alt="project-1"
@@ -135,13 +210,13 @@
               <button class="border px-6 rounded-full w-full font-bold py-2">
                 Add to cart
               </button>
-              <button class="border px-3  rounded-full font-bold py-2">
+              <button class="border px-3 rounded-full font-bold py-2">
                 <i class="fa-regular fa-heart"></i>
               </button>
             </div>
           </div>
           <!-- project card-4  -->
-          <div class="p-5 space-y-3 bg-[#ffffff] rounded-3xl  shadow-md">
+          <div class="p-5 space-y-3 bg-[#ffffff] rounded-3xl shadow-md">
             <img
               src="img/woman-model-demonstrating-winter-cloths 1.png"
               alt="project-1"
@@ -160,13 +235,13 @@
               <button class="border px-6 rounded-full w-full font-bold py-2">
                 Add to cart
               </button>
-              <button class="border px-3  rounded-full font-bold py-2">
+              <button class="border px-3 rounded-full font-bold py-2">
                 <i class="fa-regular fa-heart"></i>
               </button>
             </div>
           </div>
           <!-- project card-5  -->
-          <div class="p-5 space-y-3 bg-[#ffffff] rounded-3xl  shadow-md">
+          <div class="p-5 space-y-3 bg-[#ffffff] rounded-3xl shadow-md">
             <img
               src="img/woman-model-demonstrating-winter-cloths 1.png"
               alt="project-1"
@@ -185,13 +260,13 @@
               <button class="border px-6 rounded-full w-full font-bold py-2">
                 Add to cart
               </button>
-              <button class="border px-3  rounded-full font-bold py-2">
+              <button class="border px-3 rounded-full font-bold py-2">
                 <i class="fa-regular fa-heart"></i>
               </button>
             </div>
           </div>
           <!-- project card-6  -->
-          <div class="p-5 space-y-3 bg-[#ffffff] rounded-3xl  shadow-md">
+          <div class="p-5 space-y-3 bg-[#ffffff] rounded-3xl shadow-md">
             <img
               src="img/woman-model-demonstrating-winter-cloths 1.png"
               alt="project-1"
@@ -210,7 +285,7 @@
               <button class="border px-6 rounded-full w-full font-bold py-2">
                 Add to cart
               </button>
-              <button class="border px-3  rounded-full font-bold py-2">
+              <button class="border px-3 rounded-full font-bold py-2">
                 <i class="fa-regular fa-heart"></i>
               </button>
             </div>
@@ -219,26 +294,40 @@
       </section>
     </main>
     <!-- footer -->
-    <footer class="bg-[#F2F4F6] flex flex-col justify-center items-center gap-6 h-96">
-        <h1 class="text-[#0F0F0F] text-3xl font-bold">Nerdy</h1>
-        <ul class="flex gap-5 sm:gap-10">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-        <ul class="flex gap-7">
-          <li><a href="#"><img src="img/Group 1171275145.png" alt="facebook"></a></li>
-          <li><a href="#"><img src="img/twitter-logo-2 3.png" alt="twitter"></a></li>
-          <li><a href="#"><img src="img/Group 1171275148.png" alt="linkedin"></a></li>
-          <li><a href="#"><img src="img/Group 1171275149.png" alt="youtube"></a></li>
-        </ul>
-        <div class="flex gap-2 sm:gap-4 mt-5">
-            <input class="py-2 px-5 w-48 sm:w-96  rounded-full" type="email" placeholder="Enter your email address" />
-            <button class="bg-[#D8FB78] px-4 sm:px-6 rounded-full font-bold py-2">
-                Subscribe
-              </button>
-        </div>
+    <footer
+      class="bg-[#F2F4F6] flex flex-col justify-center items-center gap-6 h-96"
+    >
+      <h1 class="text-[#0F0F0F] text-3xl font-bold">Nerdy</h1>
+      <ul class="flex gap-5 sm:gap-10">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <ul class="flex gap-7">
+        <li>
+          <a href="#"><img src="img/Group 1171275145.png" alt="facebook" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="img/twitter-logo-2 3.png" alt="twitter" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="img/Group 1171275148.png" alt="linkedin" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="img/Group 1171275149.png" alt="youtube" /></a>
+        </li>
+      </ul>
+      <div class="flex gap-2 sm:gap-4 mt-5">
+        <input
+          class="py-2 px-5 w-48 sm:w-96 rounded-full"
+          type="email"
+          placeholder="Enter your email address"
+        />
+        <button class="bg-[#D8FB78] px-4 sm:px-6 rounded-full font-bold py-2">
+          Subscribe
+        </button>
+      </div>
     </footer>
   </body>
 </html>
